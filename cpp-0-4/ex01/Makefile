@@ -2,7 +2,7 @@
 #                                     CONFIG                                   #
 ################################################################################
 
-NAME = megaphone
+NAME = phonebook
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
@@ -10,8 +10,11 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
 
-SRCS_FILES	= megaphone.cpp
-SRCS		= $(SRCS_FILES)
+SRCS_FILES	= main.cpp \
+				PhoneBook.class.cpp \
+				Contact.class.cpp \
+				utils.cpp
+SRCS		= $(addprefix sources/, $(SRCS_FILES))
 OBJS		= $(SRCS:.c=.o)
 INCLS		= includes/
 
@@ -34,7 +37,7 @@ BLUE = \033[1;34m
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) -I$(INCLS)
 	@echo "$(BOLD)[$(NAME)] : [$(BLUE)binary$(WHITE)] [$(GREEN)✔️$(WHITE)]$(RESET)"
 
 fclean :
