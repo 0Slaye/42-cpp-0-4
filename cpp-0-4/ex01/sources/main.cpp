@@ -6,7 +6,7 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:53:25 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/13 17:51:02 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/13 18:06:26 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,20 @@ void	add_handler(PhoneBook *phonebook)
 	phonebook->set_size(phonebook->get_size() + 1);
 }
 
+void	search_handler(PhoneBook *phonebook)
+{
+	if (phonebook->get_size() == 0)
+		return ;
+	cout << "|index    |first name|last name |nickname  |" << endl;
+	for (int i = 0; i < phonebook->get_size(); i++)
+	{
+		cout << "|" << i;
+		cout << "|" << (phonebook->contacts[i]).get_fname();
+		cout << "|" << (phonebook->contacts[i]).get_lname();
+		cout << "|" << (phonebook->contacts[i]).get_nickname() << "|" << endl;
+	}
+}
+
 int	main(void)
 {
 	PhoneBook	phonebook;
@@ -38,7 +52,7 @@ int	main(void)
 		if (input.compare("ADD") == 0)
 			add_handler(&phonebook);
 		else if (input.compare("SEARCH") == 0)
-			break ;
+			search_handler(&phonebook);
 		else if (input.compare("EXIT") == 0)
 			break ;
 	}

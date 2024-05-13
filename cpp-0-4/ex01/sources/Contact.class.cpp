@@ -6,7 +6,7 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:58:27 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/13 17:46:09 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/13 18:03:55 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,29 @@ bool	Contact::setup(void)
 		return (cout << OPE_CANCELED << endl, false);
 	this->secret = input;
 	return (true);
+}
+
+string Contact::get_fname(void)
+{
+	return (this->fname);
+}
+
+string Contact::get_lname(void)
+{
+	return (this->lname);
+}
+
+string Contact::get_nickname(void)
+{
+	return (this->nickname);
+}
+
+string Contact::get_number(void)
+{
+	return (this->number);
+}
+
+string Contact::get_secret(void)
+{
+	return (this->secret);
 }
