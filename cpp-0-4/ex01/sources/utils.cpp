@@ -6,31 +6,33 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:22:18 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/13 18:21:13 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/14 17:02:46 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commons.hpp"
 
-string	prompt(string value)
+std::string	prompt(std::string value)
 {
-	string	input;
+	std::string	input;
 
-	cout << value;
-	getline(cin, input);
+	if (std::cin.eof())
+		return (NULL);
+	std::cout << value;
+	getline(std::cin, input);
 	return (input);
 }
 
-void	truncate(string value)
+void	truncate(std::string value)
 {
 	for (int i = 0; i < 9; i++)
-		cout << value[i];
-	cout << ".";
+		std::cout << value[i];
+	std::cout << ".";
 }
 
-void	add_mspaces(string value)
+void	add_mspaces(std::string value)
 {
-	cout << value;
+	std::cout << value;
 	for (int i = 0; i < 10 - (int) value.length(); i++)
-		cout << " ";
+		std::cout << " ";
 }

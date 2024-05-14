@@ -6,7 +6,7 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:58:27 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/13 17:20:41 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/14 16:12:18 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 
 PhoneBook::PhoneBook(void)
 {
-	cout << "╭───────────────────────────────╮" << endl;
-	cout << "│         [+] Phonebook         │" << endl;
-	cout << "╰───────────────────────────────╯" << endl;
-	cout << endl;
+	std::cout << "╭───────────────────────────────╮" << std::endl;
+	std::cout << "│         [+] Phonebook         │" << std::endl;
+	std::cout << "╰───────────────────────────────╯" << std::endl;
+	std::cout << std::endl;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-	cout << endl;
-	cout << "╭───────────────────────────────╮" << endl;
-	cout << "│         [-] Phonebook         │" << endl;
-	cout << "╰───────────────────────────────╯" << endl;
+	std::cout << std::endl;
+	std::cout << "╭───────────────────────────────╮" << std::endl;
+	std::cout << "│         [-] Phonebook         │" << std::endl;
+	std::cout << "╰───────────────────────────────╯" << std::endl;
 }
 
 void	PhoneBook::set_size(int value)
