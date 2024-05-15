@@ -6,9 +6,12 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:22:17 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/15 11:54:51 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/15 12:51:58 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CONTACT_CLASS_HPP
+# define CONTACT_CLASS_HPP
 
 class Contact
 {
@@ -32,3 +35,5 @@ class Contact
 		std::string	number;
 		std::string	secret;
 };
+
+#endif

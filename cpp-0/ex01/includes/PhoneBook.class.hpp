@@ -6,9 +6,12 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:54:55 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/15 11:26:49 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/15 12:52:15 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PHONEBOOK_CLASS_HPP
+# define PHONEBOOK_CLASS_HPP
 
 #include "Contact.class.hpp"
 
@@ -23,3 +26,5 @@ class PhoneBook
 	private:
 		int	size;
 };
+
+#endif
