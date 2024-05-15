@@ -3,8 +3,8 @@
 ################################################################################
 
 NAME = phonebook
-CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 ################################################################################
 #                                 PROGRAM'S SRCS                               #
@@ -15,7 +15,7 @@ SRCS_FILES	= main.cpp \
 				Contact.class.cpp \
 				utils.cpp
 SRCS		= $(addprefix sources/, $(SRCS_FILES))
-OBJS		= $(SRCS:.c=.o)
+OBJS		= $(SRCS:.cpp=.o)
 INCLS		= includes/
 
 ################################################################################
@@ -37,10 +37,17 @@ BLUE = \033[1;34m
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) -I$(INCLS)
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME) -I$(INCLS)
 	@echo "$(BOLD)[$(NAME)] : [$(BLUE)binary$(WHITE)] [$(GREEN)✔️$(WHITE)]$(RESET)"
 
-fclean :
+%.o : %.cpp
+	@$(CXX) $(CXXFLAGS) -o $@ -c $< -I$(INCLS)
+
+clean :
+	@rm -f $(OBJS)
+	@echo "$(BOLD)[$(NAME)] : [$(BLUE)objects$(WHITE)] [$(RED)✘$(WHITE)]$(RESET)"
+
+fclean : clean
 	@rm -f $(NAME)
 	@echo "$(BOLD)[$(NAME)] : [$(BLUE)binary$(WHITE)] [$(RED)✘$(WHITE)]$(RESET)"
 

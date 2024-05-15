@@ -6,7 +6,7 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:58:27 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/14 16:12:18 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/15 11:27:11 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	PhoneBook::set_size(int value)
 	this->size = value;
 }
 
-int	PhoneBook::get_size(void)
-{
+int	PhoneBook::get_size(void) const {
 	return (this->size);
 }
