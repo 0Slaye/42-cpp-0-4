@@ -2,17 +2,20 @@
 #                                     CONFIG                                   #
 ################################################################################
 
-NAME = brainz
-CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+NAME = braiiiiiiinnnzzzz
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 ################################################################################
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
 
-SRCS_FILES	= main.cpp
-SRCS		= $(SRCS_FILES)
-OBJS		= $(SRCS:.c=.o)
+SRCS_FILES	= main.cpp \
+				Zombie.class.cpp \
+				newZombie.cpp \
+				randomChump.cpp
+SRCS		= $(addprefix sources/, $(SRCS_FILES))
+OBJS		= $(SRCS:.cpp=.o)
 INCLS		= includes/
 
 ################################################################################
@@ -34,10 +37,17 @@ BLUE = \033[1;34m
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME) -I$(INCLS)
 	@echo "$(BOLD)[$(NAME)] : [$(BLUE)binary$(WHITE)] [$(GREEN)✔️$(WHITE)]$(RESET)"
 
-fclean :
+%.o : %.cpp
+	@$(CXX) $(CXXFLAGS) -o $@ -c $< -I$(INCLS)
+
+clean :
+	@rm -f $(OBJS)
+	@echo "$(BOLD)[$(NAME)] : [$(BLUE)objects$(WHITE)] [$(RED)✘$(WHITE)]$(RESET)"
+
+fclean : clean
 	@rm -f $(NAME)
 	@echo "$(BOLD)[$(NAME)] : [$(BLUE)binary$(WHITE)] [$(RED)✘$(WHITE)]$(RESET)"
 
