@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.class.hpp                                   :+:      :+:    :+:   */
+/*   FileManager.class.hpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 17:32:51 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/15 15:23:33 by slaye            ###   ########.fr       */
+/*   Created: 2024/05/17 15:56:30 by slaye             #+#    #+#             */
+/*   Updated: 2024/05/17 17:26:01 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_CLASS_H
-# define ZOMBIE_CLASS_H
+#ifndef FILEMANAGER_CLASS_HPP
+# define FILEMANAGER_CLASS_HPP
 
 # include "commons.hpp"
 
-class Zombie {
+# define F_READ 0
+# define F_WRITE 1
+# define FM_ERR_MODE "FileManager: Wrong type of mode."
+
+class FileManager {
 	public:
-		Zombie(std::string name);
-		~Zombie(void);
-		void	announce(void) const;
+		FileManager(int mode);
+		~FileManager(void);
+		bool		open(const char *fpath);
+		void		close(void);
+		std::string	read_file(void);
+		void		write_file(std::string value);
 	private:
-		std::string	name;
+		int				_mode;
+		const char		*_fpath;
+		std::ifstream	_ifs;
+		std::ofstream	_ofs;
 };
 
 #endif

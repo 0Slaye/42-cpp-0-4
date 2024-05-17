@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 13:12:15 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/15 15:23:38 by slaye            ###   ########.fr       */
+/*   Created: 2024/05/15 15:00:23 by slaye             #+#    #+#             */
+/*   Updated: 2024/05/15 16:46:06 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "commons.hpp"
+#ifndef ZOMBIE_CLASS_H
+# define ZOMBIE_CLASS_H
 
-void	randomChump(std::string name) {
-	Zombie	zombie(name);
+# include "commons.hpp"
 
-	zombie.announce();
-}
+class Zombie {
+	public:
+		Zombie(void);
+		~Zombie(void);
+		void	announce(void) const;
+		void	set_name(std::string name);
+	private:
+		std::string	name;
+};
+
+#endif

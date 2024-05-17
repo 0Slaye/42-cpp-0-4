@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Weapon.class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 13:12:15 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/15 15:23:38 by slaye            ###   ########.fr       */
+/*   Created: 2024/05/15 15:42:29 by slaye             #+#    #+#             */
+/*   Updated: 2024/05/15 16:18:06 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commons.hpp"
 
-void	randomChump(std::string name) {
-	Zombie	zombie(name);
+Weapon::Weapon(std::string type) : type(type) {
+	return ;
+}
 
-	zombie.announce();
+Weapon::~Weapon(void) {
+	return ;
+}
+
+const std::string	Weapon::getType(void) const {
+	return (this->type);
+}
+
+void	Weapon::setType(std::string value) {
+	this->type = value;
 }

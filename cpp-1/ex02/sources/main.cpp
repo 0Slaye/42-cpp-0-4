@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 13:12:15 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/15 15:23:38 by slaye            ###   ########.fr       */
+/*   Created: 2024/05/15 15:29:01 by slaye             #+#    #+#             */
+/*   Updated: 2024/05/15 15:34:35 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "commons.hpp"
+#include <iostream>
 
-void	randomChump(std::string name) {
-	Zombie	zombie(name);
+int	main(void) {
+	std::string string = "HI THIS IS BRAIN";
+	std::string *stringPTR = &string;
+	std::string &stringREF = string;
 
-	zombie.announce();
+	std::cout << &string << " | " << stringPTR << " | " << &stringREF << std::endl;
+	std::cout << string << " | " << *stringPTR << " | " << stringREF << std::endl;
+	return (0);
 }
