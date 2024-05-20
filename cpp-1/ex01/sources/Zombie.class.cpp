@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
+/*   By: uwywijas <uwywijas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 15:01:44 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/15 16:46:05 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/20 14:50:09 by uwywijas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Zombie::Zombie() {
 }
 
 Zombie::~Zombie(void) {
-	return ;
+	std::cout << this->name << ": died." << std::endl;
 }
 
 void	Zombie::announce(void) const {
