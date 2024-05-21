@@ -2,7 +2,7 @@
 #                                     CONFIG                                   #
 ################################################################################
 
-NAME = hi_this_is_brain
+NAME = unnecessary_violence
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
