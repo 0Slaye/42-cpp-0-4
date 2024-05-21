@@ -6,7 +6,7 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:40:54 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/17 17:44:57 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/21 10:15:00 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ std::string	get_sed_replace(std::string value, std::string s1, std::string s2) {
 	std::string	result;
 	std::string	holder;
 
+	if (s1 == "")
+		return (value);
 	for (int i = 0; i < (int) value.length(); i++) {
 		if (i + s1.length() > value.length())
 			break ;
@@ -44,6 +46,10 @@ int	main(int argc, char **argv) {
 		return (1);
 	}
 	file_value = fread.read_file();
+	if (file_value == "" && fread.get_error() == true) {
+		std::cerr << ERR_RD_FILE << std::endl;
+		return (1);
+	}
 	fread.close();
 	if (fwrite.open((std::string(argv[1]) + ".replace").c_str()) == false) {
 		std::cerr << ERR_OP_FILE << std::endl;
