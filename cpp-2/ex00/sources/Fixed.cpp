@@ -6,7 +6,7 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 13:02:20 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/21 15:43:34 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/21 17:51:02 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Fixed::~Fixed(void) {
 
 Fixed	&Fixed::operator=(Fixed const &ref) {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->value = ref.value;
+	this->value = ref.getRawBits();
 	return (*this);
 }
 
