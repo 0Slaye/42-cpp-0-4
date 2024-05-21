@@ -6,7 +6,7 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 12:59:31 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/21 13:03:34 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/21 15:17:27 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ class Fixed {
 		~Fixed(void); // canonical
 
 		Fixed	&operator=(Fixed const &ref); // canonical
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+	private:
+		static int const	shift = 8;
+		int					value;
 };
 
 #endif
