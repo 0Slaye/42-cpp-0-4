@@ -6,17 +6,16 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 18:10:44 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/14 16:14:54 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/21 10:05:22 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstring>
 
-void	strupper(char *string)
+void	strupper(std::string string)
 {
-	for (int i = 0; i < (int) strlen(string); i++)
-		std::cout << (char) toupper(string[i]);
+	for (int i = 0; i < (int) string.length(); i++)
+		std::cout << (char) std::toupper(string[i]);
 }
 
 int	main(int argc, char **argv)
