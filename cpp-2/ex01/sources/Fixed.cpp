@@ -6,7 +6,7 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 13:02:20 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/21 17:51:02 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/21 18:12:40 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ Fixed::Fixed(void) {
 Fixed::Fixed(Fixed const &ref) {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = ref;
+}
+
+Fixed::Fixed(const int value) {
+	std::cout << "Int constructor called" << std::endl;
+	this->value = (value << this->shift);
 }
 
 Fixed::~Fixed(void) {
