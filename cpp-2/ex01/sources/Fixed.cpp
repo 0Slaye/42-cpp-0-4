@@ -6,15 +6,13 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 13:02:20 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/22 18:39:33 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/22 18:41:14 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cmath>
 #include "Fixed.hpp"
-
-#include <bitset>
 
 Fixed::Fixed(void) {
 	std::cout << "Default constructor called" << std::endl;
