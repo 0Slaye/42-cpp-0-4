@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
+/*   By: uwywijas <uwywijas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 13:02:20 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/21 17:51:02 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/29 15:45:35 by uwywijas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Fixed.hpp"
 
-Fixed::Fixed(void) {
+Fixed::Fixed(void) : value(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
