@@ -3,21 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
+/*   By: uwywijas <uwywijas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:52:44 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/24 15:16:29 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/29 16:50:17 by uwywijas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _health(10), _energy(10), _attack(0) {
+ClapTrap::ClapTrap(void) : _name("Default"), _hit_points(10), _energy_points(10), _attack_damage(0) {
+	std::cout << "Default ClapTrap constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) {
 	std::cout << "Default ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &ref) {
-	std::cout << "Copie ClapTrap constructor called" << std::endl;
+	std::cout << "Copy ClapTrap constructor called" << std::endl;
 	*this = ref;
 }
 
@@ -27,9 +31,9 @@ ClapTrap::~ClapTrap() {
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &ref) {
 	this->_name = ref.get_name();
-	this->_health = ref.get_health();
-	this->_energy = ref.get_energy();
-	this->_attack = ref.get_attack();
+	this->_hit_points = ref.get_hit_points();
+	this->_energy_points = ref.get_energy_points();
+	this->_attack_damage = ref.get_attack_damage();
 	return (*this);
 }
 
@@ -37,34 +41,34 @@ std::string	ClapTrap::get_name(void) const {
 	return (this->_name);
 }
 
-int	ClapTrap::get_health(void) const {
-	return (this->_health);
+int	ClapTrap::get_hit_points(void) const {
+	return (this->_hit_points);
 }
 
-int	ClapTrap::get_energy(void) const {
-	return (this->_energy);
+int	ClapTrap::get_energy_points(void) const {
+	return (this->_energy_points);
 }
 
-int	ClapTrap::get_attack(void) const {
-	return (this->_attack);
+int	ClapTrap::get_attack_damage(void) const {
+	return (this->_attack_damage);
 }
 
 void	ClapTrap::attack(const std::string &target) {
-	if (this->_energy <= 0)
+	if (this->_energy_points <= 0)
 		return ;
-	this->_energy -= 1;
-	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attack << " points of damage!" << std::endl;
+	this->_energy_points -= 1;
+	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
-	this->_health -= amount;
+	amount <= this->_hit_points ? this->_hit_points -= amount : this->_hit_points = 0;
 	std::cout << "ClapTrap " << this->_name << " has been damaged by " << amount << " points!" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
-	if (this->_energy <= 0)
+	if (this->_energy_points <= 0)
 		return ;
-	this->_energy -= 1;
-	this->_health += amount;
+	this->_energy_points -= 1;
+	this->_hit_points += amount;
 	std::cout << "ClapTrap " << this->_name << " repaired himself of " << amount << " points!" << std::endl;
 }
