@@ -6,7 +6,7 @@
 /*   By: uwywijas <uwywijas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 17:48:08 by uwywijas          #+#    #+#             */
-/*   Updated: 2024/05/31 18:24:00 by uwywijas         ###   ########.fr       */
+/*   Updated: 2024/05/31 18:31:03 by uwywijas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Dog : public Animal {
 
 		Dog	&operator=(Dog const &ref); // canonical
 
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 };
 
 #endif

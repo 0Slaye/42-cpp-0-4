@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uwywijas <uwywijas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/31 18:12:25 by uwywijas          #+#    #+#             */
-/*   Updated: 2024/05/31 18:28:16 by uwywijas         ###   ########.fr       */
+/*   Created: 2024/05/31 18:33:25 by uwywijas          #+#    #+#             */
+/*   Updated: 2024/05/31 18:39:40 by uwywijas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-# include "Animal.hpp"
+#include <iostream>
 
-class Cat : public Animal {
+class WrongAnimal {
 	public:
-		Cat(void); // canonical
-		Cat(Cat const &ref); // canonical
-		~Cat(void); // canonical
+		WrongAnimal(void); // canonical
+		WrongAnimal(WrongAnimal const &ref); // canonical
+		virtual		~WrongAnimal(void); // canonical
 
-		Cat	&operator=(Cat const &ref); // canonical
+		WrongAnimal	&operator=(WrongAnimal const &ref); // canonical
 
-		virtual void	makeSound(void) const;
+		std::string		getType(void) const;
+		void	makeSound(void) const;
+
+	protected:
+		std::string	_type;
 };
 
 #endif

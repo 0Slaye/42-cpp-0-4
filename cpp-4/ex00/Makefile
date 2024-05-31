@@ -13,7 +13,9 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 SRCS_FILES	= main.cpp \
 				Animal.cpp \
 				Dog.cpp \
-				Cat.cpp
+				Cat.cpp \
+				WrongAnimal.cpp \
+				WrongCat.cpp
 SRCS		= $(addprefix sources/, $(SRCS_FILES))
 OBJS		= $(SRCS:.cpp=.o)
 INCLS		= includes/

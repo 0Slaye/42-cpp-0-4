@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uwywijas <uwywijas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/31 18:12:25 by uwywijas          #+#    #+#             */
-/*   Updated: 2024/05/31 18:28:16 by uwywijas         ###   ########.fr       */
+/*   Created: 2024/05/31 18:34:55 by uwywijas          #+#    #+#             */
+/*   Updated: 2024/05/31 18:36:00 by uwywijas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-# include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Cat : public Animal {
+class WrongCat : public WrongAnimal {
 	public:
-		Cat(void); // canonical
-		Cat(Cat const &ref); // canonical
-		~Cat(void); // canonical
+		WrongCat(void); // canonical
+		WrongCat(WrongCat const &ref); // canonical
+		~WrongCat(void); // canonical
 
-		Cat	&operator=(Cat const &ref); // canonical
+		WrongCat	&operator=(WrongCat const &ref); // canonical
 
 		virtual void	makeSound(void) const;
 };
