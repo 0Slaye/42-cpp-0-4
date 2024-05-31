@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
+/*   By: uwywijas <uwywijas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 15:18:42 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/30 16:19:54 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/31 16:57:35 by uwywijas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,14 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &ref) {
 
 
 void	ScavTrap::attack(const std::string &target) {
-	if (this->_energy_points <= 0)
+	if (this->_energy_points <= 0 || this->_hit_points <= 0)
 		return ;
 	this->_energy_points -= 1;
 	std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
 }
 
 void	ScavTrap::guardGate(void) const {
+	if (this->_hit_points <= 0)
+		return ;
 	std::cout << "ScavTrap " << this->_name << " is now in Gatekeeper mode." << std::endl;
 }

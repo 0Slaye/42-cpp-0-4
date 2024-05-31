@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
+/*   By: uwywijas <uwywijas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:52:44 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/30 16:19:01 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/31 17:00:36 by uwywijas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,20 @@ std::string	ClapTrap::get_name(void) const {
 	return (this->_name);
 }
 
-int	ClapTrap::get_hit_points(void) const {
+unsigned int	ClapTrap::get_hit_points(void) const {
 	return (this->_hit_points);
 }
 
-int	ClapTrap::get_energy_points(void) const {
+unsigned int	ClapTrap::get_energy_points(void) const {
 	return (this->_energy_points);
 }
 
-int	ClapTrap::get_attack_damage(void) const {
+unsigned int	ClapTrap::get_attack_damage(void) const {
 	return (this->_attack_damage);
 }
 
 void	ClapTrap::attack(const std::string &target) {
-	if (this->_energy_points <= 0)
+	if (this->_energy_points <= 0 || this->_hit_points <= 0)
 		return ;
 	this->_energy_points -= 1;
 	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
@@ -69,6 +69,9 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	if (this->_energy_points <= 0)
 		return ;
 	this->_energy_points -= 1;
-	this->_hit_points += amount;
+	if (this->_hit_points + amount < this->_hit_points)
+		this->_hit_points = 4294967295;
+	else
+		this->_hit_points += amount;
 	std::cout << "ClapTrap " << this->_name << " repaired himself of " << amount << " points!" << std::endl;
 }

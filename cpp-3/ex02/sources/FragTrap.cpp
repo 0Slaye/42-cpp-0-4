@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
+/*   By: uwywijas <uwywijas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 15:18:42 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/30 16:19:14 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/31 16:59:28 by uwywijas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ FragTrap	&FragTrap::operator=(FragTrap const &ref) {
 }
 
 void	FragTrap::highFivesGuys(void) const {
+	if (this->_hit_points <= 0)
+		return ;
 	std::cout << "FragTrap " << this->_name << " wants to high five." << std::endl;
 }

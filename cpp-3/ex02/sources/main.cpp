@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
+/*   By: uwywijas <uwywijas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:48:24 by slaye             #+#    #+#             */
-/*   Updated: 2024/05/30 16:15:59 by slaye            ###   ########.fr       */
+/*   Updated: 2024/05/31 17:02:30 by uwywijas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(void) {
 	{
 		FragTrap a;
 		holder = a.get_energy_points() + 10;
+		a.beRepaired(0);
 		std::cout << a.get_energy_points() << std::endl;
 		while (holder--)
 			a.attack("TEST");
@@ -32,6 +33,7 @@ int	main(void) {
 	{
 		FragTrap b("Robot");
 		holder = b.get_energy_points() + 10;
+		b.beRepaired(0);
 		std::cout << b.get_energy_points() << std::endl;
 		while (holder--)
 			b.attack("TEST");
