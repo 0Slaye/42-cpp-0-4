@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uwywijas <uwywijas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 17:30:41 by uwywijas          #+#    #+#             */
-/*   Updated: 2024/05/31 18:08:24 by uwywijas         ###   ########.fr       */
+/*   Updated: 2024/06/05 15:03:20 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Animal::~Animal(void) {
 
 Animal	&Animal::operator=(Animal const &ref) {
 	std::cout << "Animal equal operator called." << std::endl;
-	this->_type = ref._type;
+	this->_type = ref.getType();
 	return (*this);
 }
 

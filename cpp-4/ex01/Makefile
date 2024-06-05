@@ -15,7 +15,8 @@ SRCS_FILES	= main.cpp \
 				Dog.cpp \
 				Cat.cpp \
 				WrongAnimal.cpp \
-				WrongCat.cpp
+				WrongCat.cpp \
+				Brain.cpp
 SRCS		= $(addprefix sources/, $(SRCS_FILES))
 OBJS		= $(SRCS:.cpp=.o)
 INCLS		= includes/

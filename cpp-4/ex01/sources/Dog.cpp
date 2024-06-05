@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uwywijas <uwywijas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 17:50:41 by uwywijas          #+#    #+#             */
-/*   Updated: 2024/05/31 18:23:54 by uwywijas         ###   ########.fr       */
+/*   Updated: 2024/06/05 15:34:29 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Dog::Dog(void) : Animal() {
 	std::cout << "Dog default constructor called." << std::endl;
 	this->_type = "Dog";
+	this->_brain = new Brain();
 }
 
 Dog::Dog(Dog const &ref) : Animal(ref) {
@@ -23,12 +24,14 @@ Dog::Dog(Dog const &ref) : Animal(ref) {
 }
 
 Dog::~Dog(void) {
+	delete this->_brain;
 	std::cout << "Dog default destructor called." << std::endl;
 }
 
 Dog	&Dog::operator=(Dog const &ref) {
+	this->_type = ref.getType();
+	this->_brain = new Brain(*ref._brain);
 	std::cout << "Dog equal operator called." << std::endl;
-	this->_type = ref._type;
 	return (*this);
 }
 

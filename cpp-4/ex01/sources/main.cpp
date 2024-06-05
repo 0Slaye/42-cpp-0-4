@@ -6,39 +6,39 @@
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:48:24 by slaye             #+#    #+#             */
-/*   Updated: 2024/06/05 14:39:39 by slaye            ###   ########.fr       */
+/*   Updated: 2024/06/05 15:36:35 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 int	main(void) {
-	const Animal* meta = new Animal();
-	const WrongAnimal* i = new WrongCat();
-	const Animal* j = new Dog();
-	const WrongCat* k = new WrongCat();
-	const Animal* l = new Cat();
+	int	size = 10;
+	Animal *array[size];
 
-	std::cout << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << k->getType() << " " << std::endl;
-	std::cout << l->getType() << " " << std::endl;
-	std::cout << std::endl;
-	meta->makeSound();
-	i->makeSound();
-	j->makeSound();
-	k->makeSound();
-	l->makeSound();
-	std::cout << std::endl;
+	std::cout << "Creation." << std::endl;
+	for (int i = 0; i < size; i++) {
+		if (i < size / 2)
+			array[i] = new Cat();
+		else
+			array[i] = new Dog();
+		if (i != size - 1)
+			std::cout << std::endl;
+	}
+	
+	std::cout << std::endl << "Tests." << std::endl;
+	for (int i = 0; i < size; i++) {
+		std::cout << array[i]->getType() << std::endl;
+		array[i]->makeSound();
+	}
 
-	delete meta;
-	delete i;
-	delete j;
-	delete k;
+	std::cout << std::endl << "Destruction." << std::endl;
+	for (int i = 0; i < size; i++) {
+		delete array[i];
+		if (i != size - 1)
+			std::cout << std::endl;
+	}
 	return (0);
 }

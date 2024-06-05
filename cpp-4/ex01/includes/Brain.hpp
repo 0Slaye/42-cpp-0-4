@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/31 18:12:25 by uwywijas          #+#    #+#             */
-/*   Updated: 2024/06/05 15:21:05 by slaye            ###   ########.fr       */
+/*   Created: 2024/06/05 14:44:02 by slaye             #+#    #+#             */
+/*   Updated: 2024/06/05 15:15:47 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include <iostream>
 
-class Cat : public Animal {
+class Brain {
 	public:
-		Cat(void); // canonical
-		Cat(Cat const &ref); // canonical
-		~Cat(void); // canonical
+		Brain(void); // canonical
+		Brain(Brain const &ref); // canonical
+		virtual ~Brain(void); // canonical
 
-		Cat	&operator=(Cat const &ref); // canonical
+		Brain	&operator=(Brain const &ref); // canonical
 
-		virtual void	makeSound(void) const;
+		std::string	*getIdeas(void);
 	private:
-		Brain	*_brain;
+		std::string	_ideas[100];
 };
 
 #endif
