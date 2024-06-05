@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uwywijas <uwywijas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 18:34:55 by uwywijas          #+#    #+#             */
-/*   Updated: 2024/05/31 18:36:00 by uwywijas         ###   ########.fr       */
+/*   Updated: 2024/06/05 14:32:52 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongCat : public WrongAnimal {
 
 		WrongCat	&operator=(WrongCat const &ref); // canonical
 
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 };
 
 #endif
