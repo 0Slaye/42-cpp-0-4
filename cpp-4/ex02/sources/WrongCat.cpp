@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slaye <slaye@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 17:50:41 by uwywijas          #+#    #+#             */
-/*   Updated: 2024/06/05 15:40:05 by slaye            ###   ########.fr       */
+/*   Updated: 2024/06/05 14:37:36 by slaye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog(void) : Animal() {
-	std::cout << "Dog default constructor called." << std::endl;
-	this->_type = "Dog";
-	this->_brain = new Brain();
+WrongCat::WrongCat(void) : WrongAnimal() {
+	std::cout << "WrongCat default constructor called." << std::endl;
+	this->_type = "WrongCat";
 }
 
-Dog::Dog(Dog const &ref) : Animal(ref) {
-	std::cout << "Dog copy constructor called." << std::endl;
+WrongCat::WrongCat(WrongCat const &ref) : WrongAnimal(ref) {
+	std::cout << "WrongCat copy constructor called." << std::endl;
 	*this = ref;
 }
 
-Dog::~Dog(void) {
-	delete this->_brain;
-	std::cout << "Dog default destructor called." << std::endl;
+WrongCat::~WrongCat(void) {
+	std::cout << "WrongCat default destructor called." << std::endl;
 }
 
-Dog	&Dog::operator=(Dog const &ref) {
-	this->_type = ref.getType();
-	this->_brain = new Brain(*ref._brain);
-	std::cout << "Dog equal operator called." << std::endl;
+WrongCat	&WrongCat::operator=(WrongCat const &ref) {
+	std::cout << "WrongCat equal operator called." << std::endl;
+	this->_type = ref._type;
 	return (*this);
 }
 
-void	Dog::makeSound(void) const {
-	std::cout << "Wouaf wouaf." << std::endl;
+void	WrongCat::makeSound(void) const {
+	std::cout << "Wrong miaou." << std::endl;
 }
